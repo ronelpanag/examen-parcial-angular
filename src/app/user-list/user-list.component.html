@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-md-4" *ngFor="let item of user$">
+        <br>
+        <!-- Card -->
+        <mdb-card>
+            <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- Card img -->
+                <mdb-card-img src="{{item.picture.large}} " alt="Card image cap"></mdb-card-img>
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <!--Card content-->
+            <mdb-card-body>
+                <!--Title-->
+                <mdb-card-title>
+                    <h4>{{item.name.first}} {{item.name.last}}</h4>
+                </mdb-card-title>
+
+                <!--Text-->
+                <mdb-card-text> {{item.gender}}, {{item.location.city}} </mdb-card-text>
+                <button [class.selected]="item === selectedUser" mdbBtn color="primary" mdbWavesEffect (click)="onSelect(item)">Detalles</button>
+            </mdb-card-body>
+        </mdb-card>
+        <!-- Card -->
+    </div>
+</div>

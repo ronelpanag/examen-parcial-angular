@@ -1,0 +1,34 @@
+<div *ngIf="user; else vacio">
+  <div class="col-md-6">
+    <mdb-card>
+      <mdb-card-img src="{{user.picture.large}}"></mdb-card-img>
+
+      <mdb-card-body>
+        <!--Title-->
+        <mdb-card-title>
+          <h4>{{user.name.first}} {{user.name.last}}</h4>
+        </mdb-card-title>
+
+        <!--Text-->
+        <mdb-card-text>
+          <ul>
+            <li>{{user.location.street}}, {{user.location.city}}, {{user.location.state}}, {{user.location.postcode}} </li>
+            <li>{{user.email}} </li>
+            <li>{{user.nat}} </li>
+            <li>{{user.cell}} </li>
+            <li>{{user.phone}} </li>
+            <li>{{user.registered.age}} años </li>
+            <li>{{user.registered.date | date: 'dd-MM-yyyy'}} </li>
+            <li>{{user.gender}} </li>
+            <li>{{user.login.username}} </li>
+          </ul>
+        </mdb-card-text>
+      </mdb-card-body>
+
+    </mdb-card>
+  </div>
+</div>
+
+<ng-template #vacio>
+    <p class="lead">NO hay nada que mostrar.</p>
+</ng-template>
